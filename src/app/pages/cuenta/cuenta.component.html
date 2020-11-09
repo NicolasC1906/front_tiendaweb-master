@@ -1,0 +1,60 @@
+<!-- Start Banner Area -->
+<div class="banner-area organic-breadcrumb">
+  <div class="container">
+      <div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
+      </div>
+  </div>
+</div>
+<!-- End Banner Area -->
+<!-- <app-perfil></app-perfil> -->
+<!--Nav 2 -->
+
+  <div class="navbarPerfil">
+    <div class="blog_categorie_area">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-4">
+                  <div class="categories_post">
+                      <div class="categories_details">
+                          <div class="categories_text">
+                              <a (click)="misdatos()">
+                                  <h5>Mis Datos</h5>
+                              </a>
+                              <div class="border_line1"></div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-4">
+                  <div class="categories_post">
+                      <div class="categories_details">
+                          <div class="categories_text">
+                              <a (click)="order()">
+                                  <h5>Pedidos</h5>
+                              </a>
+                              <div class="border_line2"></div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-4">
+                  <div class="categories_post">
+                      <div class="categories_details">
+                          <div class="categories_text">
+                              <a href="blog-details.html">
+                                  <h5>Soporte</h5>
+                              </a>
+                              <div class="border_line3"></div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="pedido" ><app-my-shopping></app-my-shopping></div>
+  <div *ngIf="datos" ><app-perfil></app-perfil></div>
+
+
+

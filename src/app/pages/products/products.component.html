@@ -1,0 +1,51 @@
+<!-- Start category Area -->
+<section class="category-area">
+
+</section>
+<!-- End category Area -->
+
+<!-- start product Area -->
+<section class="owl-carousel active-product-area section_gap">
+    <!-- single product slide -->
+    <div class="single-product-slider">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 text-center">
+                    <div class="section-title">
+                        <h1>Productos</h1>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+            <div  class="row">
+                <!-- single product -->
+                <div *ngFor = "let product of getproducts; let index=index; let odd=odd; let even=even;" class="col-lg-3 col-md-6">
+                    <div  class="single-product">
+                        <a [routerLink]="['/infoProducto', product.id]"><img class="grande" src="{{ product.Recursos }}" alt=""></a>
+                        <div class="product-details">
+                            <h5>{{ product.NombreProducto }}</h5>
+                            <div class="price">
+                                <h6>{{ product.NombreTienda }}</h6>
+                            </div>
+                            <div class="price">
+                                <h6 type="number">{{ product.price | currency }}</h6>
+                            </div>
+                            <div class="prd-bottom">
+
+                              <a  style="cursor:pointer" (click)="addShoppingCart(product, 1)" class="social-info">
+                                <span class="ti-bag"></span>
+                                <p class="hover-text">carrito</p>
+                            </a>
+                                <a  [routerLink]="['/infoProducto', product.id]" class="social-info">
+                                    <span class="lnr lnr-move"></span>
+                                    <p class="hover-text">Ver Más</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end product Area -->

@@ -1,0 +1,132 @@
+<!-- Start Banner Area -->
+<div class="banner-area organic-breadcrumb">
+  <div class="container">
+      <div class="breadcrumb-bannertwo">
+
+      </div>
+  </div>
+</div>
+<!-- End Banner Area -->
+
+<!--================Cart Area =================-->
+<div class="cart_area">
+  <div class="container">
+    <h1>Carrito</h1>
+      <div class="cart_inner">
+          <div class="table-responsive">
+              <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border table table-striped hover">
+                  <thead>
+                      <tr>
+                          <th>Producto</th>
+                          <th>Precio</th>
+                          <th>Cantidad</th>
+                          <th>Subtotal</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr  *ngIf="shoppingCart.length == 0">
+                    <td colspan="4" class="text-center"><strong>No hay productos en el carrito.</strong></td>
+                       </tr>
+                      <tr *ngFor="let product of shoppingCart; let lastShopping = last" class="Pfroducts">
+                          <td>
+                              <div class="media">
+                                  <div class="d-flex">
+                                      <img class="pequeñacart" src="{{ product.Recursos }}" alt="">
+                                  </div>
+                                  <div class="media-body">
+                                      <p>{{ product.NombreProducto }}</p>
+                                  </div>
+                              </div>
+                          </td>
+                          <td>
+                              <h5 class="pShoppingHeader">{{ product.price }}</h5>
+                          </td>
+                          <td>
+                              <div>
+                                <span  class="qShoppingHeader" >{{ product.unit }}</span>
+                              </div>
+                              <!-- <div class="product_count">
+                                <input class="input-text qty qShoppingHeader" type="number" value="{{product.unit}}" min="1" max="9" step="1" #quantity (change)="changeQuantity(quantity.value, 0, null, product.NombreProducto)">
+                                      <button class="increase items-count" (click)="changeQuantity(quantity.value, 1, 'up', product.NombreProducto)" type="button"><i class="lnr lnr-chevron-up"></i></button>
+                                      <button class="reduced items-count" (click)="changeQuantity(quantity.value, 1, 'down', product.NombreProducto)" type="button"><i class="lnr lnr-chevron-down"></i></button>
+                              </div> -->
+                          </td>
+
+                            <td class="subTotalPrice"><div class="spinner-border subTotalPriceM"></div></td>
+
+                          <td>
+                            <a  style="cursor:pointer" (click)="removeProduct(product.NombreProducto)">
+                                <i class="icon-cross"></i>
+                            </a>
+                          </td>
+                          {{ lastShopping ? callbackShopping() : "" }}
+                      </tr>
+                      <tr class="bottom_button">
+                          <td>
+                              <H6>¿Tienes un cupon para esta compra?</H6>
+                          </td>
+                          <td>
+                          </td>
+                          <td>
+                          </td>
+                          <td>
+                              <div class="cupon_text d-flex align-items-center">
+                                  <input type="text" placeholder="Codigo Cupon">
+                                  <a class="primary-btn" href="#">Aplicar</a>
+                              </div>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>
+
+                          </td>
+                          <td>
+
+                          </td>
+                          <td>
+                              <h4>Total</h4>
+                          </td>
+                          <td>
+                            <div [innerHTML]="total"></div>
+                          </td>
+                      </tr>
+                      <tr class="shipping_area">
+                          <td>
+
+                          </td>
+                          <td>
+
+                          </td>
+                          <td>
+                              <h5>Envio</h5>
+                          </td>
+                          <td>
+                              <div class="shipping_box">
+                                  <p><em>A cargo del vendedor.</em></p>
+                              </div>
+                          </td>
+                      </tr>
+                      <tr class="out_button_area">
+                          <td>
+
+                          </td>
+                          <td>
+
+                          </td>
+                          <td>
+
+                          </td>
+                          <td>
+                              <div class="checkout_btn_inner d-flex align-items-center">
+                                  <a class="gray_btn" href="#">volver</a>
+                                  <a  *ngIf="shoppingCart.length > 0" class="primary-btn checkout-btn" routerLink="/checkout">Proceder a Checkout</a>
+                              </div>
+                          </td>
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
+      </div>
+  </div>
+</div>
+<!--================End Cart Area =================-->

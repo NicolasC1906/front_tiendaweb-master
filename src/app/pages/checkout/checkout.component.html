@@ -1,0 +1,273 @@
+<!--================Checkout Area =================-->
+<section class="checkout_area section_gap">
+  <div class="container">
+      <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-6 text-center">
+                <div class="section-title">
+                    <h3>Checkout</h3>
+                    <p>Ingresa Tus Datos y procede al pago</p>
+                </div>
+            </div>
+        </div>
+      </div>
+
+      <div class="billing_details">
+          <div class="row">
+              <div class="col-lg-8">
+                  <h3>Datos Comprador</h3>
+                          <!-- Start Formulario de usuario -->
+            <form  class="row contact_form" [formGroup]="form">
+              <div class="col-md-6 form-group p_star input-group-icon">
+                <div class="icon"><i class="fa fa-user-circle" aria-hidden="true"></i></div>
+            <!-- Start Nombre de usuario -->
+                    <input
+                    type="text"
+                    class="form-control"
+                    id="first"
+                    name="nombre"
+                    value = "{{ user.nombre }}"
+                    readonly
+                    required
+                    class="single-input">
+                </div>
+            <!-- End Nombre de usuario -->
+            <div class="col-md-6 form-group p_star input-group-icon">
+              <div class="icon"><i class="fa fa-info" aria-hidden="true"></i></div>
+            <!-- Start Apellido de usuario -->
+                    <input
+                    type="text"
+                    class="form-control"
+                    id="last"
+                    name="apellido"
+                    value = "{{ user.apellido }}"
+                    readonly
+                    required
+                    class="single-input">
+                </div>
+            <!-- End Apellido de usuario -->
+
+            <!-- End Empresa de usuario -->
+            <div class="col-md-6 form-group p_star input-group-icon">
+              <div class="icon"><i class="fa fa-envelope" aria-hidden="true"></i></div>
+              <!-- Start Correo de usuario -->
+                      <input
+                      type="text"
+                      class="form-control"
+                      id="email"
+                      name="correo"
+                      value = "{{ user.correo }}"
+                      email
+                      readonly
+                      required
+                      class="single-input">
+                  </div>
+                  <div class="col-md-6 form-group p_star input-group-icon">
+                    <div class="icon"><i class="fa fa-phone" aria-hidden="true"></i></div>
+              <!-- Start Telefono de usuario -->
+                      <input
+                      type="text"
+                      class="form-control"
+                      id="number"
+                      name="telefono"
+                      placeholder="telefono"
+                      value = "{{ user.telefono }}"
+                      formControlName="telefono"
+                      number
+                      required
+                      class="single-input">
+                  </div>
+              <!-- End Telefono de usuario -->
+              <div class="col-md-12 form-group p_star input-group-icon">
+                <div class="icon"><i class="fa fa-building" aria-hidden="true"></i></div>
+                <!-- Start Empresa de usuario -->
+                        <input
+                        type="text"
+                        class="form-control"
+                        id="company"
+                        name="company"
+                        placeholder="Nombre Empresa"
+                        formControlName="company"
+                        required
+                        class="single-input">
+                    </div>
+              <div class="col-md-12 form-group p_star input-group-icon">
+              <div class="icon"><i class="fa fa-id-badge" aria-hidden="true"></i></div>
+              <div
+              class="form-select"
+              formControlName="typeid">
+                    <select>
+                      <option value=" 1"selected="true" disabled="disabled">Tipo de Identificación</option>
+                    <option value="CC">CC</option>
+                    <option value="CE">CE</option>
+                    <option value="NIT">NIT</option>
+                    </select>
+              </div>
+            </div>
+                <!-- End Telefono de usuario -->
+
+                <div class="col-md-12 form-group p_star input-group-icon">
+                  <div class="icon"><i class="fa fa-id-card" aria-hidden="true"></i></div>
+                  <!-- Start Telefono de usuario -->
+                          <input
+                          type="text"
+                          class="form-control"
+                          id="number"
+                          name="identificacion"
+                          placeholder="Numero de Identificacion"
+                          value = "{{ user.dni }}"
+                          formControlName="dni"
+                          number
+                          required
+                          class="single-input">
+                      </div>
+                  <!-- End Telefono de usuario -->
+
+            <!-- End Correo de usuario -->
+
+            <!-- Start Pais de usuario -->
+            <div class="col-md-12 form-group p_star input-group-icon">
+              <div class="icon"><i class="fa fa-globe" aria-hidden="true"></i></div>
+              <div
+              class="form-select"
+              formControlName="pais">
+                    <select>
+                      <option value=" 1"selected="true" disabled="disabled">Pais</option>
+                    <option value="Colombia">Colombia</option>
+                    </select>
+              </div>
+            </div>
+            <!-- End Pais de usuario -->
+            <!-- Start Dirección de usuario -->
+              <div class="col-md-12 form-group p_star input-group-icon">
+                <div class="icon"><i class="fa fa-map-signs" aria-hidden="true"></i></div>
+                <input
+                type="text"
+                class="form-control"
+                id="add1"
+                name="add1"
+                placeholder="Direccion"
+                value = "{{ user.direccion }}"
+                formControlName="add1"
+                required
+                class="single-input">
+              </div>
+              <!-- End Dirección de usuario -->
+              <div class="col-md-12 form-group p_star input-group-icon">
+                <div class="icon"><i class="fa fa-thumb-tack" aria-hidden="true"></i></div>
+            <!-- Start Ciudad de usuario -->
+                    <input
+                    type="text"
+                    class="form-control"
+                    id="city"
+                    name="city"
+                    placeholder="Ciudad"
+                    formControlName="city"
+                    required
+                    class="single-input">
+                </div>
+            <!-- End Ciudad de usuario -->
+            <div class="col-md-12 form-group p_star input-group-icon">
+              <div class="icon"><i class="fa fa-map-pin" aria-hidden="true"></i></div>
+            <!-- Start Codigo Postal de usuario -->
+                    <input
+                    type="text"
+                    class="form-control"
+                    id="zip"
+                    name="zip"
+                    placeholder="Codigo Postal"
+                    formControlName="zip"
+                    required
+                    class="single-input">
+                </div>
+            <!-- End Codigo Postal de usuario -->
+
+            <div class="col-md-12 form-group p_star input-group-icon">
+              <div class="icon"><i class="" aria-hidden="true"></i></div>
+
+            <!-- End Idicaciones de usuario -->
+                    <textarea
+                    class="form-control"
+                    name="message"
+                    id="message"
+                    rows="1"
+                    placeholder="Casa / Apartamento / Piso"
+                    formControlName="message"
+                    required
+                    class="single-input">
+                    </textarea>
+                </div>
+            <!-- End Indicaciones de usuario -->
+   </form>
+<!-- End Formulario de usuario -->
+                  <div class="cupon_area">
+                        <h6>¿Tienes un cupon para esta compra?</h6>
+                    <input
+                    type="text"
+                    formControlName="cupon"
+                    placeholder="Ingresa el codigo del cupon"
+                    class="single-input">
+                    <a class="tp_btn" href="#">Aplicar Cupon</a>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                  <div class="order_box">
+                    <h3>Tu orden</h3>
+                    <div  class="table-responsive">
+                      <table class="table">
+                          <thead>
+                              <tr>
+                                  <th scope="col">Producto</th>
+                                  <th scope="col">Cantidad</th>
+                                  <th scope="col">Precio</th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                              <tr  *ngIf="shoppingCart.length == 0">
+                            <td colspan="4" class="text-center"><strong>No hay productos en el carrito.</strong></td>
+                               </tr>
+                              <tr *ngFor="let product of shoppingCart; let lastShopping = last" class="Pfroducts">
+                                  <td>
+                                      <div class="media">
+                                          <div class="media-body">
+                                              <p>{{ product.NombreProducto }}</p>
+                                          </div>
+                                      </div>
+                                  </td>
+                                  <td>
+                                      <div>
+                                        <span  class="qShoppingHeader" >{{ product.unit }}</span>
+                                      </div>
+                                  </td>
+                                  <td hidden="hidden">
+                                    <p  class="pShoppingHeader">{{ product.price }}</p>
+                                </td>
+                                  <td class="subTotalPrice"><div class="spinner-border subTotalPriceM"></div></td>
+
+                                  {{ lastShopping ? callbackShopping() : "" }}
+                              </tr>
+                              <tr>
+                                  <td>
+                                      <h4>Total</h4>
+                                  </td>
+                                  <td>
+                                    <div [innerHTML]="total"></div>
+                                  </td>
+                              </tr>
+                          </tbody>
+                      </table>
+                  </div>
+                  <div class="col-md-12 form-group">
+                    <form [formGroup]="form" (ngSubmit)="save($event)">
+                      <button class="genric-btn success radius pago-btn" type="submit" value="submit">Pagar</button>
+                    </form>
+                </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+
+<!--================End Checkout Area =================-->

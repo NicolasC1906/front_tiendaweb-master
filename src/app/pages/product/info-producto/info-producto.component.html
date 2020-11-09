@@ -1,0 +1,127 @@
+<!-- Start Banner Area -->
+<section class="banner-area organic-breadcrumb">
+    <div class="container">
+        <div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
+        </div>
+    </div>
+</section>
+<!-- End Banner Area -->
+<!--================Single Product Area =================-->
+<div class="product_image_area">
+    <div class="container">
+        <div class="row s_product_inner">
+            <div *ngFor = "let product of products " class="col-lg-6">
+                <div class="s_Product_carousel">
+                    <div class="single-prd-item">
+                        <img class="img-fluid" src="{{ product.Recurso }}" alt="">
+                    </div>
+                </div>
+            </div>
+            <div *ngFor = "let product of products " class="col-lg-5 offset-lg-1">
+                <div class="s_product_text">
+                    <h3>{{ product.nombre }} </h3>
+                    <h2>{{ product.valor | currency }}</h2>
+                    <ul class="list">
+                        <li><a class="active" href="#"><span>Categoria:</span> {{ product.Categoria }}</a></li>
+                        <li><a href=""><span>Cantidad:</span>  {{ product.cantidad }} unidades</a></li>
+                    </ul>
+                    <p>{{ product.descripcion }}</p>
+                    <div class="product_count">
+                        <label class=""for="qty">Cantidad:</label>
+                        <input type="text" name="qty" id="sst" maxlength="12" value="1" title="Quantity:" class="input-text qty">
+
+                    </div>
+                    <div class="card_area d-flex align-items-center">
+                        <a class="primary-btn" style="cursor:pointer" (click)="addShoppingCart(product, 1)">Añadir al carrito</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--================End Single Product Area =================-->
+<!--================Product Description Area =================-->
+<section class="product_description_area">
+    <div class="container">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link"  id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Descripción</a>
+            </li>
+        </ul>
+        <div *ngFor = "let product of products " class="tab-content" id="myTabContent">
+            <div class="tab-pane fade" id="home" role="tabpanel" aria-labelledby="home-tab">
+                <p>{{ product.descripcion }}</p>
+            </div>
+            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                <div class="table-responsive">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <h5></h5>
+                                </td>
+                                <td>
+                                    <h5></h5>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h5></h5>
+                                </td>
+                                <td>
+                                    <h5></h5>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h5></h5>
+                                </td>
+                                <td>
+                                    <h5></h5>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h5></h5>
+                                </td>
+                                <td>
+                                    <h5></h5>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h5></h5>
+                                </td>
+                                <td>
+                                    <h5></h5>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h5></h5>
+                                </td>
+                                <td>
+                                    <h5></h5>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h5></h5>
+                                </td>
+                                <td>
+                                    <h5></h5>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h5></h5>
+                                </td>
+                                <td>
+                                    <h5></h5>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+

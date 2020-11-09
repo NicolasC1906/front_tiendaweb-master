@@ -1,0 +1,65 @@
+<!--=====================================
+                Profile
+                ======================================-->
+                <aside class="ps-block--store-banner">
+
+                  <div class="ps-block__user">
+
+                      <div *ngFor = "let user of users " class="ps-block__user-content text-center text-lg-left">
+
+                          <h2 class="text-white">{{ user.nombre }} {{ user.apellido }} <em>{{ user.id }}</em></h2>
+
+                          <p><i class=""></i><em> {{ user.rol }}</em></p>
+                          <p><i class=""></i> {{ user.dni }}</p>
+                          <p><i class=""></i> {{ user.correo }}</p>
+
+                          <button (click)="logout()" class="btn btn-warning btn-lg">Cerrar la sesión</button>
+
+                      </div>
+
+                      <div class="row ml-lg-auto pt-5">
+
+                          <div class="col-lg-3 col-6">
+                              <div class="text-center">
+                                  <a href="#">
+                                      <h1><i class=""></i></h1>
+                                      <h4 class="text-white">ordenes <span class="badge badge-secondary rounded-circle"></span></h4>
+                                  </a>
+                              </div>
+                          </div><!-- box /-->
+
+                          <div class="col-lg-3 col-6">
+                              <div class="text-center">
+                                  <a href="#">
+                                      <h1><i class=""></i></h1>
+                                      <h4 class="text-white">Productos <span class="badge badge-secondary rounded-circle">4</span></h4>
+                                  </a>
+                              </div>
+                          </div><!-- box /-->
+
+                          <div class="col-lg-3 col-6">
+                              <div class="text-center">
+                                  <a href="#">
+                                      <h1><i class=""></i></h1>
+                                      <h4 class="text-white">Disputas <span class="badge badge-secondary rounded-circle">2</span></h4>
+                                  </a>
+                              </div>
+                          </div><!-- box /-->
+
+                          <div class="col-lg-3 col-6">
+                              <div class="text-center">
+                                  <a href="#">
+                                      <h1><i class=""></i></h1>
+                                      <h4 class="text-white">Mensajes <span class="badge badge-secondary rounded-circle">12</span></h4>
+                                  </a>
+                              </div>
+                          </div><!-- box /-->
+                      </div>
+
+                  </div>
+
+              </aside><!-- s -->
+              <div class="single-product-slider">
+                <div class="container">
+              </div>
+              </div>

@@ -1,0 +1,37 @@
+<!-- start features Area -->
+
+<section class="features-area section_gap">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-6 text-center">
+          <div class="section-title">
+              <h3>Tiendas Asociadas</h3>
+              <p></p>
+          </div>
+      </div>
+  </div>
+  <div class="container">
+    <div class="row features-inner">
+      <!-- single features -->
+      <div *ngFor = "let product of getTiendas" class="col-lg-3 col-md-6 col-sm-6">
+        <div class="single-features">
+
+          <div class="single-product">
+            <img class="mediana" src="assets/img/front/Logo160px.jpeg" alt="Logo">
+          </div>
+          <hr>
+          <pre>Calificación: <b>{{ product.calificacion }}</b></pre>
+          <h6>{{ product.nombre }}</h6>
+
+        </div>
+        <ngb-rating [rate]=" product.calificacion "></ngb-rating>
+        <hr>
+
+      </div>
+
+    </div>
+  </div>
+  </div>
+</section>
+<!-- end features Area -->
+

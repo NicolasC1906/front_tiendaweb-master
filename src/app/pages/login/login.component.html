@@ -1,0 +1,93 @@
+	<!--================Login Box Area =================-->
+	<section class="login_box_area section_gap">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="login_box_img">
+						<img class="img-fluid" src="assets/img/front/bogota.jpg" alt="">
+						<div class="hover">
+							<h4>¿Listo para comprar?</h4>
+							<p>Compra en La Mejor Feria</p>
+							<a class="primary-btn" routerLink="/registro" >Crear Cuenta</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<div class="login_form_inner">
+						<h3>INICIAR SESIÓN</h3>
+						<form
+						(ngSubmit)="onSubmit(f)"
+                        #f="ngForm"
+						class="row login_form needs-validation"
+						novalidate>
+							<div class="col-md-12 form-group">
+								<input
+								type="text"
+								class="form-control"
+								placeholder="Correo Electronico"
+								onfocus="this.placeholder = ''"
+								onblur="this.placeholder = 'Correo Electronico'"
+								[(ngModel)]="user.correo"
+                                name="correo"
+                                required
+                                minlength="3"
+                                data-toggle="tooltip"
+								title="Ingresa correo electronico">
+								<div class="valid-feedback">Válido.</div>
+                                <div class="invalid-feedback">Por favor rellene este campo.</div>
+							</div>
+							<div class="col-md-12 form-group">
+								<input
+								type="password"
+								class="form-control"
+								placeholder="Contraseña"
+								onfocus="this.placeholder = ''"
+								onblur="this.placeholder = 'Contraseña'"
+								[(ngModel)]="user.contrasena"
+                                name="contrasena"
+                                required
+                                minlength="4"
+                                data-toggle="tooltip"
+                                title="Ingresa contraseña">
+                                <div class="valid-feedback">Válido.</div>
+                                <div class="invalid-feedback">Por favor rellene este campo.</div>
+							</div>
+							<div class="col-md-12 form-group">
+								<div class="creat_account">
+									<input type="checkbox" id="f-option2" name="selector">
+									<label for="f-option2"> Mantenme conectado</label>
+								</div>
+							</div>
+							<div class="col-md-12 form-group">
+								<button  type="submit" value="submit" class="primary-btn">INICIAR SESIÓN</button>
+								<a href="#">Se te olvidó tu contraseña?</a>
+                            </div>
+
+                            <div class="col-md-12 form-group">
+
+                                <h5>Conectar con:</h5>
+
+                                <ul>
+
+                                    <li>
+                                        <div class="col-md-12 form-group">
+                                            <button type="submit" value="submit" class="primary-btn social-facebook">Facebook</button>
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <div class="col-md-12 form-group">
+                                            <button type="submit" value="submit" class="primary-btn social-google">Google</button>
+                                        </div>
+                                    </li>
+
+                                </ul>
+
+                            </div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--================End Login Box Area =================-->

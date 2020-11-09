@@ -1,0 +1,28 @@
+<div class="banner-area organic-breadcrumb">
+  <div class="container">
+    <table class="row-border hover table table-striped table-bordered hover" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+      <thead>
+        <tr>
+          <th>Numero Pedido</th>
+          <th>Valor</th>
+          <th>Estado</th>
+          <th>Fecha de Compra</th>
+          <th>Información</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor = "let user of users ">
+          <td>{{ user.id }}</td>
+          <td>{{ user.ValorTotal | currency }}</td>
+          <td>{{ user.estadoEnvio }}</td>
+          <td>{{  user.fecha | date  }}</td>
+          <td>
+            <div class="checkout_btn_inner d-flex align-items-center">
+              <a class="btn btn-warning btn-lg" (click)="viewpedido(user.id)">Mas Información</a>
+          </div>
+          </td>
+        </tr>
+      </tbody>
+      </table>
+  </div>
+</div>
