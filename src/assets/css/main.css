@@ -6140,3 +6140,13 @@ body {
     rgba(160, 15, 139, 1) 100%
   );
 }
+.scroll
+{
+  height: 350px;
+  width: 300px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.example::-webkit-scrollbar {
+  display: none;
+}
