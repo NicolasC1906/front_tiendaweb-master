@@ -6055,7 +6055,7 @@ body {
 
 .stories {
   display: flex;
-  align-items: center;
+  align-items: lex-end;
   flex: 1;
   max-width: 768px;
   border-radius: 4px;
@@ -6077,13 +6077,14 @@ body {
 
 .stories__item a {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: column-reverse;
+  align-items: flex-end;
   border: 0;
   background: transparent;
   width: 64px;
   cursor: pointer;
   outline: 0;
+
 }
 
 .stories__item button {
@@ -6098,8 +6099,9 @@ body {
 }
 
 .stories__item-picture {
-  width: 100px;
-  height: 100px;
+
+  width: 70px;
+  height: 70px;
   margin-bottom: 5px;
   padding: 4px;
   border-radius: 50%;
@@ -6116,9 +6118,10 @@ body {
 }
 
 .stories__item-username {
-  width: 64px;
+  width: 200px;
   text-overflow: ellipsis;
-  overflow: hidden;
+  text-transform: capitalize;
+  position: relative;
 }
 
 .stories__item--active .stories__item-picture::before {
