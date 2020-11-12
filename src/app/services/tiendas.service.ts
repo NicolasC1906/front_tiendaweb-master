@@ -20,6 +20,11 @@ export class TiendasService {
 
 		return this.http.get(`${this.api}ferias`);
 
+  }
+  getFeriaActiva(){
+
+		return this.http.get(`${this.api}feriaActiva`);
+
 	}
 }
 

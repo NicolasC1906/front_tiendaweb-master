@@ -23,6 +23,11 @@ export class ProductsService {
 		return this.http.get(`${this.api}producto/${id}`);
 
   }
+  getDataFeriaID(id){
+
+		return this.http.get(`${this.api}productos/feria/${id}`);
+
+  }
   refresh(){
     window.location.reload();
 }
