@@ -58,6 +58,7 @@ export class TiendaComponent implements OnInit {
           "oferta":resp[i].oferta,
           "id":resp[i].id,
           "cantidad":resp[i].cantidad,
+          "IdTienda":resp[i].IdTienda,
         })
       }
 

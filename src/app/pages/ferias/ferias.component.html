@@ -73,7 +73,7 @@
                             </div>
                             <h6>{{ product.NombreProducto }}</h6>
                             <h2>{{ product.descripcion }}</h2>
-                            <p>{{ product.valorFeria |currency }}</p>
+                            <p>{{ product.valorFeria |currency : 'USD' : 'symbol' : '1.0-0' }}</p>
                             <button class="btncompra">Añadir al Carrito</button>
                           </div>
                         </div>

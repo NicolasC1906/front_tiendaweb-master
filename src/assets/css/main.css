@@ -1339,7 +1339,8 @@ h1, h2, h3, h4, h5, h6 {
 
 #category .organic-breadcrumb {
   margin-bottom: 100px; }
-
+  .breadcrumb-bannerinfo {
+    padding: 0px 0 100px 0; }
 .breadcrumb-bannertwo {
     padding: 90px 0 5px 0; }
 .breadcrumb-banner {
@@ -4047,7 +4048,7 @@ label {
     bottom: -8px; }
 
 .product_description_area {
-  padding-bottom: 120px;
+  padding-bottom: 10px;
   margin-top: 60px; }
   .product_description_area .nav.nav-tabs {
     background: #e8f0f2;
@@ -4067,11 +4068,11 @@ label {
         padding: 0px;
         border: none;
         line-height: 38px;
-        background: #fff;
+        background: linear-gradient(-40deg, #f9235c 0%, #f9235c 60%);
         border: 1px solid #eeeeee;
-        border-radius: 0px;
-        padding: 0px 30px;
-        color: #222222;
+        border-radius: 10px;
+        padding: 0px 70px;
+        color: #ffffff;
         font-size: 13px;
         font-weight: normal; }
         @media (max-width: 570px) {
@@ -6299,5 +6300,17 @@ cuerpo {
 	right: 30px;
 	letter-spacing: 1px;
 }
-
+.btnInfo {
+	background-color: #2E4EFF;
+	border: 0;
+	border-radius: 10px;
+	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+	color: #fff;
+	font-size: 16px;
+	padding: 12px 55px;
+	position: left;
+	bottom: 30px;
+	right: 30px;
+	letter-spacing: 1px;
+}
 

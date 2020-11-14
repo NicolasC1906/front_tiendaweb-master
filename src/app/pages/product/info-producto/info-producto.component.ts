@@ -41,24 +41,25 @@ export class InfoProductoComponent implements OnInit {
     .getDataByID(this.id)
     .subscribe((r: any) => {
       this.products.push({
-        "id":r.id,
-        "nombre":r.nombre,
-        "IdCategoria":r.IdCategoria,
-        "descripcion":r.descripcion,
-        "valor":r.valor,
-        "cantidad":r.cantidad,
-        "valorOferta":r.valorOferta,
-        "Categoria":r.Categoria["nombre"],
-        "idCategoria":r.Categoria["id"],
-        "Recurso":r.Recursos[0]["url"],
-        "IdTienda":r.IdTienda,
-        "NombreTienda":r.NombreTienda,
+         "id":r.id,
+        "NombreProducto":r.nombre,
+        "IdCategoria":r.IdCategoria,
+        "descripcion":r.descripcion,
+        "price":r.valor,
+        "cantidad":r.cantidad,
+        "oferta":r.valorOferta,
+        "Categoria":r.Categoria["nombre"],
+        "idCategoria":r.Categoria["id"],
+        "Recursos":r.Recursos[0]["url"],
+        "IdTienda":r.IdTienda,
+        "NombreTienda":r.NombreTienda,
       })
       console.log(this.products);
     }
 
     ));
   }
+
   addShoppingCart(producto, cantidad){
 
     let url = this.router.url;

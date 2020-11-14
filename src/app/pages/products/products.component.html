@@ -28,7 +28,7 @@
                                 <h6>{{ product.NombreTienda }}</h6>
                             </div>
                             <div class="price">
-                                <h6 type="number">{{ product.price | currency }}</h6>
+                                <h6 type="number">{{ product.price | currency : 'USD' : 'symbol' : '1.0-0' }}</h6>
                             </div>
                             <div class="prd-bottom">
 

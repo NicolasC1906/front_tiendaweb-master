@@ -52,6 +52,7 @@ export class CartComponent implements  OnInit, OnDestroy  {
 
         let list = JSON.parse(localStorage.getItem('list'));
         this.totalShoppingCart = list.length;
+        console.log("CartComponent -> ngOnInit -> list", list)
         /*=============================================
         Recorremos el arreglo del listado
         =============================================*/

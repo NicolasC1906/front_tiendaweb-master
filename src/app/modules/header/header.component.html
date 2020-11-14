@@ -19,16 +19,19 @@
                     <ul class="nav navbar-nav menu_nav ml-auto">
                       <li *ngIf="iniciar"class="nav-item"><a routerLink="/login" class="nav-link">Iniciar sesión</a></li>
                         <li *ngIf="perfil" class="nav-item submenu dropdown">
-                          <a class="nav-link" [routerLink] ="['/cuenta', idUser]"><i class="lnr lnr-user"></i> Hola, {{ nombre }} {{ apellido }}</a>
+                          <a class="nav-link " [routerLink] ="['/cuenta', idUser]"><i class="lnr lnr-user"></i> Hola, {{ nombre }} {{ apellido }}</a>
                         </li>
-                        <li *ngIf="perfil" class="nav-item"><a (click)="logout()" style="cursor:pointer"  class="nav-link">Cerrar sesión</a></li>
+                        <li *ngIf="perfil" class="nav-item btn btn-outline-warning"><a (click)="logout()" style="cursor:pointer"  class="nav-link">Cerrar sesión</a></li>
                     </ul>
+                    <button type="button" class="btn btn-primary" [routerLink] ="['/cart']" style="margin-left: 10px;"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                      Carrito:  <span class="badge badge-light">4</span>
+                    </button>
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="nav-item"><a [routerLink] ="['/cart']" class="cart"><span class="ti-bag"></span> Carrito</a></li>
                         <li class="nav-item">
                             <button class="search"><span class="lnr lnr-magnifier" id="search"></span></button>
                         </li>
                     </ul>
+
                 </div>
             </div>
         </nav>
