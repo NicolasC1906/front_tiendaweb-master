@@ -1405,18 +1405,33 @@ h1, h2, h3, h4, h5, h6 {
 
 .single-features {
   text-align: center;
-  border-right: 1px solid #eeeeee; }
+  border-right: 1px solid #eeeeee;
+
+}
+.color{
+  background-color: #2E4EFF;
+  border-radius: 10px;
+  background-repeat: no-repeat;
+  background-size: 1px 1px;
+}
+.single-title {
+  text-align: center;
+  border-right: 1px solid #eeeeee;;
+}
   @media (max-width: 991px) {
     .single-features {
       border-right: none;
-      margin-bottom: 30px; } }
+      margin-bottom: 30px;
+     } }
   .single-features .f-icon {
-    margin-bottom: 20px; }
+    margin-bottom: 20px;
+   }
     .single-features .f-icon img {
       -webkit-transition: all 0.3s ease 0s;
       -moz-transition: all 0.3s ease 0s;
       -o-transition: all 0.3s ease 0s;
-      transition: all 0.3s ease 0s; }
+      transition: all 0.3s ease 0s;
+        }
   .single-features h6 {
     font-size: 16px;
     margin-bottom: 0; }
@@ -5912,6 +5927,9 @@ label {
   img.grande{
     width: 250px; height: 200px;
   }
+  img.medianaBanner{
+    width: 500px; height: 200px;
+  }
 /*# sourceMappingURL=main.css.map */
 mgl-timeline:not(.mobile) {
   padding: 50px 20px;
@@ -6314,3 +6332,45 @@ cuerpo {
 	letter-spacing: 1px;
 }
 
+.categories-container {
+  padding: 40px;
+}
+
+.categories-container .page-title{
+  text-align: center;
+  font-size: 34px;
+}
+.page-h6{
+  text-align: center;
+  text-decoration-color: #fff;
+  margin-top: 19px;
+}
+.categories-container .category-list {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.categories-container .category-list .category-item {
+  width: 150px;
+  border-radius: 4px;
+  height: 150px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background: #2E4EFF;
+  color: white;
+  font-size: 24px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: .3s ease all;
+}
+
+.categories-container .category-list .category-item:hover {
+  background: #f9235c;
+  color: white;
+}

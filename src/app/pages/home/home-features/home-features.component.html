@@ -1,97 +1,34 @@
- <!--=====================================
-Home Features
-======================================-->
+
 <!-- start features Area -->
 
-<div class="features-area section_gap" >
-    <div class="container">
-    <div class="row justify-content-center">
-                <div class="col-lg-6 text-center">
-                    <div class="section-title">
-                        <h1>CATEGORIAS</h1>
-                        <p>Seleccione la categoria que desees</p>
-                    </div>
-                </div>
-            </div>
-        <div class="row features-inner">
-            <!-- Categoria 1 -->
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="single-features">
-                    <div class="f-icon">
-                        <img src="assets/img/front/moda.png" alt="">
-                    </div>
-                    <h6>Moda</h6>
-                </div>
-                <div class="br2"></div>
-            </div>
-            <!-- Categoria 2-->
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="single-features">
-                    <div class="f-icon">
-                        <img src="assets/img/front/tecnologia.png" alt="">
-                    </div>
-                    <h6>Tecnología</h6>
-                </div>
-                <div class="br2"></div>
-            </div>
-            <!-- Categoria 3-->
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="single-features">
-                    <div class="f-icon">
-                        <img src="assets/img/front/hogar.png" alt="">
-                    </div>
-                    <h6>Hogar</h6>
-                </div>
-                <div class="br2"></div>
-            </div>
-            <!-- Categoria 4-->
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="single-features">
-                    <div class="f-icon">
-                        <img src="assets/img/front/Belleza.png" alt="">
-                    </div>
-                    <h6>Belleza y Cuidado Personal</h6>
-                </div>
-                <div class="br2"></div>
-            </div>
-            <!-- Categoria 5-->
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="single-features">
-                    <div class="f-icon">
-                        <img src="assets/img/front/toys.png" alt="">
-                    </div>
-                    <h6>Juguetes y Entretenimiento</h6>
-                </div>
-            </div>
-            <!-- Categoria 6-->
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="single-features">
-                    <div class="f-icon">
-                        <img src="assets/img/front/deportes.png" alt="">
-                    </div>
-                    <h6>Deportes</h6>
-                </div>
-            </div>
-            <!-- Categoria 7-->
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="single-features">
-                    <div class="f-icon">
-                        <img src="assets/img/front/mascotas.png" alt="">
-                    </div>
-                    <h6>Mascotas</h6>
-                </div>
-            </div>
-            <!-- Categoria 8-->
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="single-features">
-                    <div class="f-icon">
-                        <img src="assets/img/front/ver_mas.png" alt="">
-                    </div>
-                    <h6>Ver Más</h6>
-                </div>
-            </div>
 
+<div class="features-area section_gap" >
+<div class="categories-container">
+  <div class="row justify-content-center">
+  <div class="col-lg-6 text-center">
+  <div class="section-title">
+    <h1>CATEGORIAS</h1>
+    <p>Seleccione la categoria que desees</p>
+  </div>
+</div>
+</div>
+  <div class="category-list single-features">
+    <div  class="category-item"*ngFor = "let categoria of getcategorias">
+      <div>
+        <div>
+            <img class="mediano" src="{{ categoria.imagen }}" alt="">
         </div>
+        <h6 class="page-h6"  style="color:#ffffff;">{{ categoria.nombre }}</h6>
     </div>
+    </div>
+  </div>
+</div>
 </div>
 <!-- end features Area -->
+
+<div class="">
+    <div class="single-product-slider">
+      <div class="container">
+      </div>
+  </div>
+</div>

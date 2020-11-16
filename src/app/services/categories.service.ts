@@ -13,7 +13,7 @@ export class CategoriesService {
 
   	getData(){
 
-		return this.http.get(`${this.api}categorias`);
+		return this.http.get(`${this.api}categorias/activas`);
 
 	}
 }
