@@ -1,5 +1,5 @@
 
-<section class="features-area section_gap">
+<div class="features-area section_gap">
   <div class="container">
     <div class="row justify-content-center align-items-center">
       <div class="col-lg-6 text-center">
@@ -18,38 +18,29 @@
               </div>
           </div>
       </div>
-  </div>
-    <div class="row features-inner">
-      <!-- single features -->
-      <div class="col-lg-8">
-        <div class="blog_left_sidebar">
-            <article *ngFor = "let product of getproducts; let index=index; let odd=odd; let even=even;" class="row blog_item">
-                <div class="col-md-3">
-                    <div class="blog_info text-right">
-                        <div class="post_tag">
-                            <a class="active" href="#">{{ product.Categoria }}</a>
-                        </div>
+      <div  class="row">
+        <!-- single product -->
+        <div *ngFor = "let product of getproducts; let index=index; let odd=odd; let even=even;" class="col-lg-3 col-md-6">
+            <div  class="single-product cards-1">
+                <a [routerLink]="['/infoProducto', product.id]"><img class="grande" src="{{ product.Recursos }}" alt=""></a>
+                <div *ngIf="product.bandera" [ngClass]=" product.banderaoffer  ? 'tx-box-feria' :  'tx-box'">
+                <div class="tx-tag">{{product.namebandera}}</div>
+              </div>
+                <div class="product-details">
+                    <div class="card_content">
+                      <h2 class="card_title">{{ product.NombreProducto }}</h2>
+                      <p class="card_text">{{ product.NombreTienda }}</p>
+                      <h6 class="card_text">{{ product.price | currency : 'USD' : 'symbol' : '1.0-0' }}</h6>
+                      <button [routerLink]="['/infoProducto', product.id]" class="btn2 card_btn">Ver Producto</button>
+                      <button (click)="addShoppingCart(product, 1)" class="btn2 card_btn">Añadir al Carrito</button>
+                      <div class="prd-bottom">
+                      </div>
                     </div>
-                </div>
-                <div class="col-md-9">
-                    <div class="blog_post">
-                        <img class="grande" src="{{ product.Recursos }}" alt="">
-                        <div class="blog_details">
-                            <h3>{{ product.NombreProducto }}</h3>
-                            <p>{{ product.descripcion }}</p>
-                            <h3 type="number">{{ product.price | currency }}</h3>
-                            <a style="cursor:pointer" (click)="addShoppingCart(product, 1)" class="white_bg_btn">Añadir al Carrito</a>
-                        </div>
-                    </div>
-                </div>
 
-            </article>
-
+                </div>
+            </div>
         </div>
-
-    </div>
     </div>
   </div>
-</section>
-
-
+  </div>
+</div>

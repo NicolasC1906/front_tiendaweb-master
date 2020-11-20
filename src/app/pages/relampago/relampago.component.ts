@@ -29,6 +29,17 @@ export class RelampagoComponent implements OnInit {
   seconds: any;
   source = timer(0, 1000);
   clock: any;
+  subscriptions:Subscription[]=[];
+  products:any = [];
+  productname:any = [];
+  recursosar:any = [];
+  url:any;
+  product:any = [];
+  price:any;
+  banderaoffer:boolean;
+  bandera:boolean;
+  namebandera:any;
+  recursos:any;
 
   constructor(
     private CategoriesService: CategoriesService,
@@ -46,29 +57,75 @@ export class RelampagoComponent implements OnInit {
       this.showDate();
     });
   }
-/// Traer Productos
-getUrl(){
-  this.salesService
-  .getData()
-  .subscribe(resp =>{
-    let i;
-    for(i in resp){
-      this.getproducts.push({
-
-        "NombreProducto":resp[i].nombre,
-        "Recursos": resp[i].Recursos[0]["url"],
-        "Categoria": resp[i].Categoria.nombre,
-        "NombreTienda":resp[i].Tiendas.nombre,
-        "price":resp[i].valor,
-        "oferta":resp[i].oferta,
-        "id":resp[i].id,
-        "descripcion":resp[i].descripcion,
+  getproductrecurso() {
+    this.subscriptions.push(
+      this.ProductsService
+      .getData()
+      .subscribe((r: any) => {
+        this.products = r;
+        for (let product of this.products ){
+          this.productname = product.nombre;
+          this.recursosar = product.Categoria;
+          console.log(this.recursosar);
+        }
       })
-    }
-
+    );
   }
- );
-}
+  /// Traer Productos
+  getUrl(){
+    this.ProductsService
+    .getData()
+    .subscribe(resp =>{
+      let i;
+      for(i in resp){
+        if(resp[i].feria === true){
+          this.price = resp[i].valorFeria
+          this.bandera = true;
+          this.banderaoffer= true;
+          this.namebandera = "En Feria"
+
+        }else if(resp[i].oferta === true){
+          this.price = resp[i].valorOferta
+          this.bandera = true;
+          this.banderaoffer= false;
+          this.namebandera = "Oferta"
+
+        }else{
+          this.price = resp[i].valor
+          this.bandera = false;
+          this.banderaoffer= false;
+          this.namebandera = "productonormal"
+
+
+        }
+        // recursos
+        if(resp[i].Recursos == 0){
+          console.log("entro")
+          this.recursos = 'assets/img/front/nofoto.png';
+
+        }else{
+          this.recursos = resp[i].Recursos[0]["url"]
+
+        }
+        this.getproducts.push({
+
+          "NombreProducto":resp[i].nombre,
+          "Recursos": this.recursos,
+          "Categoria": resp[i].Categoria.nombre,
+          "NombreTienda":resp[i].NombreTienda,
+          "bandera":this.bandera,
+          "banderaoffer":this.banderaoffer,
+          "namebandera":this.namebandera,
+          "price":this.price,
+          "oferta":resp[i].oferta,
+          "id":resp[i].id,
+        })
+        console.log(this.getproducts)
+      }
+
+    }
+   );
+  }
 showDate(){
   let distance = this.end - this.now;
   this.day = Math.floor(distance / this._day);

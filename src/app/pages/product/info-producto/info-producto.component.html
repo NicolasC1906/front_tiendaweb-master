@@ -25,13 +25,15 @@
                         <li><a class="active"><span>Categoria:</span> {{ product.Categoria }}</a></li>
                         <li><a class="active"><span>Cantidad:</span>  {{ product.cantidad }} unidades</a></li>
                         <li><a class="active"><span>Tienda:</span>  {{ product.NombreTienda }}</a></li>
-                    </ul>
+
+                      </ul>
                     <p><span></span></p>
                     <div class="product_count">
                         <label class=""for="qty">Cantidad:</label>
                         <input type="text" name="qty" id="sst" maxlength="12" value="1" title="Quantity:" class="input-text qty">
 
                     </div>
+
                     <div class="card_area d-flex align-items-center">
                         <button class="btnInfo" (click)="addShoppingCart(product, 1)">Añadir al Carrito</button>
                       </div>

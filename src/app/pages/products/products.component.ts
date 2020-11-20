@@ -18,7 +18,11 @@ export class ProductsComponent implements OnInit {
   url:any;
   product:any = [];
   getproducts:any = [];
-
+  price:any;
+  recursos:any;
+  banderaoffer:boolean;
+  bandera:boolean;
+  namebandera:any;
   constructor(private ProductsService: ProductsService,
               private usuariosService: UsuariosService,
               private router: Router) { }
@@ -56,16 +60,49 @@ export class ProductsComponent implements OnInit {
     .subscribe(resp =>{
       let i;
       for(i in resp){
+        if(resp[i].feria === true){
+          this.price = resp[i].valorFeria
+          this.bandera = true;
+          this.banderaoffer= true;
+          this.namebandera = "En Feria"
+
+        }else if(resp[i].oferta === true){
+          this.price = resp[i].valorOferta
+          this.bandera = true;
+          this.banderaoffer= false;
+          this.namebandera = "Oferta"
+
+        }else{
+          this.price = resp[i].valor
+          this.bandera = false;
+          this.banderaoffer= false;
+          this.namebandera = "productonormal"
+
+
+        }
+        // recursos
+        if(resp[i].Recursos == 0){
+          console.log("entro")
+          this.recursos = 'assets/img/front/nofoto.png';
+
+        }else{
+          this.recursos = resp[i].Recursos[0]["url"]
+
+        }
         this.getproducts.push({
 
           "NombreProducto":resp[i].nombre,
-          "Recursos": resp[i].Recursos[0]["url"],
+          "Recursos": this.recursos,
           "Categoria": resp[i].Categoria.nombre,
           "NombreTienda":resp[i].NombreTienda,
-          "price":resp[i].valor,
+          "bandera":this.bandera,
+          "banderaoffer":this.banderaoffer,
+          "namebandera":this.namebandera,
+          "price":this.price,
           "oferta":resp[i].oferta,
           "id":resp[i].id,
         })
+        console.log(this.getproducts)
       }
 
     }

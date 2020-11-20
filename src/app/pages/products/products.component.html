@@ -3,6 +3,72 @@
 
 </section>
 <!-- End category Area -->
+<!-- <div class="header_area sticky-header" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="maindos ">
+      <div class="storiesfront section-top-border scrolln example" data-ride="carousel" id="carouselExampleControls">
+        <div class="col-md-6 ">
+          <a href="assets/img/front/ingresa.jpg" class="img-pop-up">
+            <div class="single-gallery-image " style="background: url(assets/img/front/ingresa.jpg);"></div>
+          </a>
+        </div>
+        <div class="col-md-6">
+          <a href="assets/img/front/feria.jpg" class="img-pop-up">
+            <div class="single-gallery-image " style="background: url(assets/img/front/feria.jpg);"></div>
+          </a>
+        </div>
+        <div class="col-md-6 ">
+          <a href="assets/img/front/mano.jpg" class="img-pop-up">
+            <div class="single-gallery-image " style="background: url(assets/img/front/mano.jpg);"></div>
+          </a>
+        </div>
+        <div class="col-md-6">
+          <a href="assets/img/front/importaciones.jpg" class="img-pop-up">
+            <div class="single-gallery-image " style="background: url(assets/img/front/importaciones.jpg);"></div>
+          </a>
+        </div>
+        <div class="col-md-6 ">
+          <a href="assets/img/front/compras.jpg" class="img-pop-up">
+            <div class="single-gallery-image " style="background: url(assets/img/front/compras.jpg);"></div>
+          </a>
+        </div>
+        <div class="col-md-6">
+          <a href="assets/img/front/relampago.jpg" class="img-pop-up">
+            <div class="single-gallery-image  " style="background: url(assets/img/front/relampago.jpg);"></div>
+          </a>
+        </div>
+      </div>
+    </div>
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div> -->
+<div class="owl-carousel active-product-area section_gap">
+  <!-- single product slide -->
+  <div class="single-product-slider">
+      <div class="container">
+        <div class="section-top-border">
+          <div class="row gallery-item">
+            <div class="col-md-6 cards-1">
+              <a href="assets/img/front/ingresa.jpg" class="img-pop-up">
+                <div class="single-gallery-image" style="background: url(assets/img/front/ingresa.jpg);"></div>
+              </a>
+            </div>
+            <div class="col-md-6 cards-1">
+              <a href="assets/img/front/feria.jpg" class="img-pop-up">
+                <div class="single-gallery-image" style="background: url(assets/img/front/feria.jpg);"></div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
 <!-- start product Area -->
 <section class="owl-carousel active-product-area section_gap">
@@ -20,27 +86,22 @@
             <div  class="row">
                 <!-- single product -->
                 <div *ngFor = "let product of getproducts; let index=index; let odd=odd; let even=even;" class="col-lg-3 col-md-6">
-                    <div  class="single-product">
-                        <a [routerLink]="['/infoProducto', product.id]"><img class="grande" src="{{ product.Recursos }}" alt=""></a>
+                    <div  class="single-product cards-1">
+                        <a [routerLink]="['/infoProducto', product.id]"><img class="grande"  src="{{ product.Recursos }}" alt=""></a>
+                        <div *ngIf="product.bandera" [ngClass]=" product.banderaoffer  ? 'tx-box-feria' :  'tx-box'">
+                        <div class="tx-tag">{{product.namebandera}}</div>
+                      </div>
                         <div class="product-details">
-                            <h5>{{ product.NombreProducto }}</h5>
-                            <div class="price">
-                                <h6>{{ product.NombreTienda }}</h6>
+                            <div class="card_content">
+                              <h2 class="card_title">{{ product.NombreProducto }}</h2>
+                              <p class="card_text">{{ product.NombreTienda }}</p>
+                              <h6 class="card_text">{{ product.price | currency : 'USD' : 'symbol' : '1.0-0' }}</h6>
+                              <button [routerLink]="['/infoProducto', product.id]" class="btn2 card_btn">Ver Producto</button>
+                              <button (click)="addShoppingCart(product, 1)" class="btn2 card_btn">Añadir al Carrito</button>
+                              <div class="prd-bottom">
+                              </div>
                             </div>
-                            <div class="price">
-                                <h6 type="number">{{ product.price | currency : 'USD' : 'symbol' : '1.0-0' }}</h6>
-                            </div>
-                            <div class="prd-bottom">
 
-                              <a  style="cursor:pointer" (click)="addShoppingCart(product, 1)" class="social-info">
-                                <span class="ti-bag"></span>
-                                <p class="hover-text">carrito</p>
-                            </a>
-                                <a  [routerLink]="['/infoProducto', product.id]" class="social-info">
-                                    <span class="lnr lnr-move"></span>
-                                    <p class="hover-text">Ver Más</p>
-                                </a>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -49,3 +110,26 @@
     </div>
 </section>
 <!-- end product Area -->
+
+<div class="owl-carousel active-product-area section_gap">
+  <!-- single product slide -->
+  <div class="single-product-slider">
+      <div class="container">
+        <div class="section-top-border">
+          <div class="row gallery-item">
+            <div class="col-md-6 cards-1">
+              <a href="assets/img/front/mano.jpg" class="img-pop-up">
+                <div class="single-gallery-image " style="background: url(assets/img/front/mano.jpg);"></div>
+              </a>
+            </div>
+            <div class="col-md-6 cards-1">
+              <a href="assets/img/front/importaciones.jpg" class="img-pop-up">
+                <div class="single-gallery-image " style="background: url(assets/img/front/importaciones.jpg);"></div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
