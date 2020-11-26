@@ -4053,9 +4053,9 @@ label {
     box-shadow: none;
     cursor: pointer;
     position: absolute;
-    right: 0px;
+    right: -25px;
     font-size: 14px;
-    color: #cccccc;
+    color: #f9235c;
     -webkit-transition: all 0.3s ease 0s;
     -moz-transition: all 0.3s ease 0s;
     -o-transition: all 0.3s ease 0s;
@@ -4063,9 +4063,10 @@ label {
     .product_count button:hover {
       color: #222222; }
   .product_count .increase {
-    top: -4px; }
+    top: -14px; }
   .product_count .reduced {
     bottom: -8px; }
+
 
 .product_description_area {
   padding-bottom: 10px;
@@ -6582,6 +6583,28 @@ text-align: center;
   right: 5%;
   background: #ffcf5d;
 
+}
+
+.demo {
+  text-align: center;
+
+  button {
+    margin: 0 auto 20px;
+    padding: 8px 16px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+  .image-swiper {
+    position: relative;
+    max-width: 600px;
+    height: 600px;
+    height: 474px;
+    margin: 0 auto;
+  }
 }
 
 

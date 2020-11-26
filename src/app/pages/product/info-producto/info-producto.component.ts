@@ -6,6 +6,7 @@ import { Subject, Subscription } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UsuariosService } from '../../../services/usuarios.service';
+import { NgxSwiperConfig } from 'ngx-image-swiper';
 
 
 @Component({
@@ -19,8 +20,26 @@ export class InfoProductoComponent implements OnInit {
   productname:any = [];
   recursosar:any = [];
   id:any;
+  imagen:any = [];
+  recursos:any = [];
   product:any = [];
   getproducts:any = [];
+  getRecursos:Array<any> = [];
+
+  images = [
+    'https://firebasestorage.googleapis.com/v0/b/lamejorferia-32065.appspot.com/o/img%2Fproducto%20cleanblin-8.png?alt=media&token=d05f5bab-6a69-4b3c-8484-f688739fc1e0',
+    'https://images.pexels.com/photos/2395264/pexels-photo-2395264.jpeg',
+    'https://images.pexels.com/photos/2474014/pexels-photo-2474014.jpeg',
+    'https://images.pexels.com/photos/2440296/pexels-photo-2440296.jpeg',
+    'https://images.pexels.com/photos/2387869/pexels-photo-2387869.jpeg'
+  ];
+
+  swiperConfig: NgxSwiperConfig = {
+    navigation: true,
+    navigationPlacement: 'inside',
+    pagination: true,
+    paginationPlacement: 'outside'
+  };
 
   constructor(
     private ProductsService: ProductsService,
@@ -40,6 +59,7 @@ export class InfoProductoComponent implements OnInit {
     this.ProductsService
     .getDataByID(this.id)
     .subscribe((r: any) => {
+      this.recursos = r.Recursos
       this.products.push({
          "id":r.id,
         "NombreProducto":r.nombre,
@@ -53,11 +73,27 @@ export class InfoProductoComponent implements OnInit {
         "Recursos":r.Recursos[0]["url"],
         "IdTienda":r.IdTienda,
         "NombreTienda":r.NombreTienda,
+        "tags":r.tags,
+        "porMayor":r.porMayor,
+        "valorPorMayor":r.valorPorMayor,
+        "caracteristicas":r.caracteristicas,
       })
-      console.log(this.products);
+      this.getImagen();
+
     }
 
     ));
+  }
+
+  getImagen(){
+
+      let i;
+      for(i in this.recursos){
+        this.getRecursos.push({
+          "url": this.recursos[i].url})
+      }
+      console.log(this.getRecursos)
+
   }
 
   addShoppingCart(producto, cantidad){
@@ -73,6 +109,15 @@ export class InfoProductoComponent implements OnInit {
     }
     console.log("item", item);
     this.usuariosService.addShoppingCart(item);
+  }
+
+
+  nav() {
+    this.swiperConfig.navigation = !this.swiperConfig.navigation;
+  }
+
+  imgClicked(index: number) {
+    console.log('imgClicked:', index);
   }
 }
 

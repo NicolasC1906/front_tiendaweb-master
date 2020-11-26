@@ -30,6 +30,8 @@
     "datatables.net-dt": "^1.10.22",
     "jquery": "^3.5.1",
     "ng-uikit-pro-standard": "^1.0.0",
+    "ngx-image-swiper": "^1.2.1",
+    "ngx-swiper-wrapper": "^10.0.0",
     "rxjs": "~6.5.4",
     "sweetalert2": "^10.6.1",
     "tslib": "^1.10.0",

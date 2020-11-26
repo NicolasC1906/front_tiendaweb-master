@@ -20,6 +20,8 @@ import { PedidoComponent } from './pages/cuenta/pedido/pedido.component';
 import { AuthGuard } from './guards/auth.guard';
 import { RejectedComponent } from './pages/rejected/rejected.component';
 import { FeriasComponent } from './pages/ferias/ferias.component';
+import { TerminosComponent } from './pages/terminos/terminos.component';
+import { SeguridadComponent } from './pages/seguridad/seguridad.component';
 
 
 const routes: Routes = [
@@ -41,6 +43,8 @@ const routes: Routes = [
     {path: 'pedido/:id', component: PedidoComponent },
     {path: 'rechazado', component: RejectedComponent },
     {path: 'ferias', component: FeriasComponent },
+    {path: 'terminos', component: TerminosComponent },
+    {path: 'seguridad', component: SeguridadComponent },
 
 
 

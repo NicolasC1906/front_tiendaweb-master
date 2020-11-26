@@ -36,6 +36,10 @@ import { PedidoComponent } from './pages/cuenta/pedido/pedido.component';
 import { RejectedComponent } from './pages/rejected/rejected.component';
 import { PlayerVideoModule } from 'angular-storyshare-player';
 import { FeriasComponent } from './pages/ferias/ferias.component';
+import { NgxImageSwiperModule } from 'ngx-image-swiper';
+import { TerminosComponent } from './pages/terminos/terminos.component';
+import { SeguridadComponent } from './pages/seguridad/seguridad.component';
+
 
 
 @NgModule({
@@ -64,6 +68,9 @@ import { FeriasComponent } from './pages/ferias/ferias.component';
     PedidoComponent,
     RejectedComponent,
     FeriasComponent,
+    TerminosComponent,
+    SeguridadComponent,
+
   ],
   imports: [
     PlayerVideoModule,
@@ -75,7 +82,9 @@ import { FeriasComponent } from './pages/ferias/ferias.component';
     DataTablesModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    MglTimelineModule
+    MglTimelineModule,
+    NgxImageSwiperModule
+
   ],
   providers: [],
   schemas: [

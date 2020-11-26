@@ -55,7 +55,7 @@ export class CartComponent implements  OnInit, OnDestroy  {
         console.log("CartComponent -> ngOnInit -> list", list)
         /*=============================================
         Recorremos el arreglo del listado
-        =============================================*/
+        =============================================*/ 
         let load = 0;
         for (const i in list){
           load++;
